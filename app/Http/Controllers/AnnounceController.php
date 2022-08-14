@@ -39,11 +39,11 @@ class AnnounceController extends Controller
             echo "Vous n'avez pas accès à cette page";
         } 
 
-        Validator::make($request->all(), [
-            'title' => ['required'],
-            'description' => ['required'],
-            'type' => ['required']
-        ]);
+       $request->validate([
+           'title' => 'required',
+           'description' => 'required',
+           'type' => 'required'
+       ]);
 
         Announce::create([
             'title' => $request->title,
