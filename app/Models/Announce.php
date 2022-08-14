@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Announce extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'type'
+    ];
+
+    /**
+     * function list()
+     * Renvoie une liste de toutes les annonces
+     */
+    public function list() {
+        return $this->latest()->paginate(4);
+    }
+}
