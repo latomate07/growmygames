@@ -15,6 +15,12 @@
         <option value="Affiliation rémunéré">Affiliation rémunéré</option>
         <option value="Affiliation non rémunéré">Affiliation non rémunéré</option>
     </select>
+    <select name="categorie" id="">
+        <option value="Jeu d'action">Jeu d'action</option>
+        <option value="Jeu d'aventure">Jeu d'aventure</option>
+        <option value="Jeu de sport">Jeu de sport</option>
+        <option value="Jeu de danse">Jeu de danse</option>
+    </select>
     <input type="submit" value="Créer">
 </form>
 
