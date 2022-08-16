@@ -9,18 +9,14 @@ class Announce extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title',
-        'description',
-        'type'
-    ];
+    protected $guarded = [];
 
     /**
      * function list()
      * Renvoie une liste de toutes les annonces
      */
     public function list() {
-        return $this->latest()->paginate(4);
+        return $this->with('categorie')->latest()->paginate(4);
     }
 
     /**
@@ -28,7 +24,7 @@ class Announce extends Model
      * Retourne la catégorie de l'annonce
      */
     public function categorie() {
-        return $this->belongsTo(Categorie::class);
+        return $this->hasOne(Categorie::class);
     }
 
     /**

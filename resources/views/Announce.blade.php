@@ -3,16 +3,10 @@
 @section("content")
 
 <div class="announceContent">
-
     <p><strong> Titre de l'annonce : </strong> <br>{{ $annonce->title }}</p>
     <p><strong> Description de l'annonce : </strong> <br>{{  $annonce->description }}</p>
     <p><strong> Type de l'annonce : </strong> <br>{{ $annonce->type }}</p>
-
-    @php
-        echo "<pre>";
-        var_dump($annonce);
-        echo "</pre>";
-    @endphp
+    <p><strong> Catégorie : </strong> <br>{{ $annonce->categorie->nom ? $annonce->categorie->nom : "Non classé" }}</p>
 </div>
 
 <style>

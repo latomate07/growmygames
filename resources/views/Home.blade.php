@@ -9,9 +9,10 @@
             @foreach ($data as $item)
             <div class="announceBlock">
                 <ul class="listBlockElements">
-                    <li><strong>Nom :</strong> {{ $item["title"] }}</li>
-                    <li><strong>Description :</strong> {{ $item["description"] }}</li>
-                    <li><strong>Type d'affiliation :</strong> {{ $item["type"] }}</li>
+                    <li><strong>Nom :</strong> {{ $item->title }}</li>
+                    <li><strong>Description :</strong> {{ $item->description }}</li>
+                    <li><strong>Type d'affiliation :</strong> {{ $item->type }}</li>
+                    <li><strong>Catégorie :</strong> {{ $item->categorie->nom ? $item->categorie->nom : "Non classé"}}</li>
                 </ul>
                 <a href="{{ route("announce.show", $item["id"]) }}" class="btn">Voir l'annonce</a>
             </div>

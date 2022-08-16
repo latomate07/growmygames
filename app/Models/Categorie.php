@@ -9,12 +9,9 @@ class Categorie extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nom',
-        'announce_id'
-    ];
+    protected $guarded = [];
 
     public function announce() {
-        return $this->hasOne(Announce::class);
+        return $this->belongsTo(Announce::class);
     }
 }
