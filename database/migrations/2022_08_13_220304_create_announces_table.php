@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('type'); // Type de l'affiliation
+            $table->string('image');
             $table->timestamps();
         });
     }

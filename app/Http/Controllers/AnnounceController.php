@@ -20,8 +20,16 @@ class AnnounceController extends Controller
     }
     public function index()
     {
-        return view('Home', [
-            "data" => $this->announce->list()
+        return view('Home');
+    }
+
+    /**
+     * Function list()
+     * Affiche toutes les annonces disponible en base de donnée
+     */
+    public function list() {
+        return view('annonces.List', [
+            'annonces' => $this->announce->list() 
         ]);
     }
 
@@ -31,7 +39,7 @@ class AnnounceController extends Controller
      */
     public function show(Request $resquest, $id)
     {
-        return view("Announce", [
+        return view("annonces.Announce", [
             "annonce" => $this->announce->show($id)
         ]);
     }
@@ -42,10 +50,13 @@ class AnnounceController extends Controller
      */
     public function create(StoreAnnounceRequest $request)
     {
+        $imgFolder = $request->image->store('announces');
+
         $annonce = Announce::create([
             'title' => $request->title,
             'description' => $request->description,
             'type' => $request->type,
+            'image' => $imgFolder
         ]);
 
         Categorie::create([
@@ -53,6 +64,6 @@ class AnnounceController extends Controller
              'announce_id' => $annonce->id
         ]);
 
-        return redirect('/')->with('status', 'Votre annonce a été crée avec succès.');
+        return redirect('/annonces')->with('status', 'Votre annonce a été crée avec succès.');
     }
 }

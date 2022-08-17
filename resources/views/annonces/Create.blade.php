@@ -2,7 +2,7 @@
 
 @section("content")
 
-<form action="{{ url('announce/create') }}" method="post">
+<form action="{{ url('announce/create') }}" method="post" enctype="multipart/form-data">
     @csrf
     @if(!empty($errors))
         @foreach ($errors->all() as $error)
@@ -21,6 +21,8 @@
         <option value="Jeu de sport">Jeu de sport</option>
         <option value="Jeu de danse">Jeu de danse</option>
     </select>
+
+    <input type="file" name="image" id="image">
     <input type="submit" value="Créer">
 </form>
 

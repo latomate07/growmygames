@@ -26,7 +26,8 @@ class StoreAnnounceRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
-            'type' => 'required'
+            'type' => 'required',
+            'image' => 'required'
         ];
     }
 }
