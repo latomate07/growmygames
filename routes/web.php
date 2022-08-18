@@ -20,26 +20,24 @@ use Illuminate\Support\Facades\Route;
 Route::get("/", [AnnounceController::class, 'index'])->name('home');
 Route::get('/annonces', [AnnounceController::class, 'list'])->name('announce.list');
 
-Route::get("/create", function() {
-    return view("annonces.Create");
-})->name('announce.createForm');
-
-Route::get("/inscription", function() {
+Route::get("/inscription", function () {
     return view("auth.Signin");
 })->name('signin');
 
-Route::get("/connexion", function() {
+Route::get("/connexion", function () {
     return view("auth.Login");
 })->name('login');
 
-Route::post("/announce/create", [AnnounceController::class, 'create'])->name('announce.create');
-Route::get("/announce/{id}", [AnnounceController::class, 'show'])->name('announce.show');
-Route::get("/mon-compte", [UserController::class, 'index'])->name('userProfil');
-
-
 // Route::resource("user", UserController::class);
 Route::post("/user/create", [UserController::class, 'store'])
-      ->name('user.create');
+    ->name('user.create');
 
-
+Route::middleware('auth')->group(function () {
+    Route::get("/create", function () {
+        return view("annonces.Create");
+    })->name('announce.createForm');
+    Route::post("/announce/create", [AnnounceController::class, 'create'])->name('announce.create');
+    Route::get("/announce/{id}", [AnnounceController::class, 'show'])->name('announce.show');
+    Route::get("/mon-compte", [UserController::class, 'index'])->name('userProfil');
+});
 
