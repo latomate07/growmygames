@@ -8,7 +8,7 @@
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">
                     Plateforme d'affiliation dédié au jeux vidéos</h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                Nous vous mettons en relation avec des influenceurs du monde entier pour faire connaître votre jeu
+                    GrowMyGames - plateforme moderne combinant les intérêts des annonceurs et des webmaster
                 </p>
                 <a href="#"
                     class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
@@ -35,10 +35,11 @@
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div class="max-w-screen-md mb-8 lg:mb-16">
                 <h2 class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
-                    Conçu pour les équipes commerciales comme la vôtre
+                    Conçu pour les organisations émergentes comme la vôtre
                 </h2>
-                <p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where
-                    technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+                    Sur GrowMyGames, nous vous joignons aux passionnés de jeux vidéo qui ont une communauté derrière eux pour faire connaître vos jeux.
+                </p>
             </div>
             <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
                 <div>
@@ -52,8 +53,9 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 text-xl font-bold dark:text-white">Marketing</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with
-                        all the organization and hit your marketing goals every month with our marketing plan.</p>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Planifiez-le, créez-le, lancez-le. Collaborez de manière transparente avec nos annonceurs et atteignez vos objectifs marketing sans tracas.
+                    </p>
                 </div>
                 <div>
                     <div
@@ -66,8 +68,9 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 text-xl font-bold dark:text-white">Legal</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Protect your organization, devices and stay compliant with
-                        our structured workflows and custom permissions made for you.</p>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Notre système de modération manuel pour tout client que vous recevez à travers l'un de nos annonceurs vous assure d'avoir de vrais joueurs intéressés par votre jeu.
+                    </p>
                 </div>
                 <div>
                     <div
@@ -82,9 +85,10 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="mb-2 text-xl font-bold dark:text-white">Business Automation</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Auto-assign tasks, send Slack messages, and much more. Now
-                        power up with hundreds of new templates to help you get started.</p>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Business Automatique</h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Automatisez votre campagne publicitaire en autorisant le type de promotion que vous souhaitez, déléguer cette dernière à toute personne souhaitant promouvoir votre jeu. 
+                    </p>
                 </div>
                 <div>
                     <div
@@ -100,8 +104,9 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 text-xl font-bold dark:text-white">Finance</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Audit-proof software built for critical financial operations
-                        like month-end close and quarterly budgeting.</p>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Gérer votre budget dédié à la promotion de votre jeu depuis votre tableau de bord de façon simple, intuitif et sécurisé.
+                    </p>
                 </div>
                 <div>
                     <div
@@ -114,8 +119,9 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 text-xl font-bold dark:text-white">Enterprise Design</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Craft beautiful, delightful experiences for both marketing
-                        and product with real cross-company collaboration.</p>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Créez des expériences magnifiques et agréables pour le marketing et les jeux grâce à une véritable collaboration interentreprises.
+                    </p>
                 </div>
                 <div>
                     <div
@@ -128,8 +134,9 @@
                         </svg>
                     </div>
                     <h3 class="mb-2 text-xl font-bold dark:text-white">Operations</h3>
-                    <p class="text-gray-500 dark:text-gray-400">Keep your company’s lights on with customizable, iterative,
-                        and structured workflows built for all efficient teams and individual.</p>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Gardez les lumières de votre entreprise allumées grâce à des flux de travail personnalisables, itératifs et structurés, conçus pour toutes les équipes et personnes efficaces.
+                    </p>
                 </div>
             </div>
         </div>
@@ -156,40 +163,17 @@
         </div>
     </section>
 
-    <section class="bg-gray-50 dark:bg-gray-900 dark:bg-gray-800">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Powering innovation at <span
-                        class="font-extrabold">200,000+</span> companies worldwide</h2>
-                <p class="mb-4 font-light">Track work across the enterprise through an open, collaborative platform. Link
-                    issues across Jira and ingest data from other software development tools, so your IT support and
-                    operations teams have richer contextual information to rapidly respond to requests, incidents, and
-                    changes.</p>
-                <p class="mb-4 font-medium">Deliver great service experiences fast - without the complexity of traditional
-                    ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease.</p>
-                <a href="#"
-                    class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
-                    Learn more
-                    <svg class="ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div class="mx-auto max-w-screen-sm text-center">
-                <h2 class="mb-4 text-4xl font-extrabold leading-tight text-gray-900 dark:text-white">Start your free trial
-                    today</h2>
-                <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">Try Flowbite Platform for 30 days. No
-                    credit card required.</p>
+                <h2 class="mb-4 text-4xl font-extrabold leading-tight text-gray-900 dark:text-white">
+                    Passer à l'action</h2>
+                <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
+                    Essayez notre plateforme gratuitement,
+                    Aucune carte de crédit n'est requise.</p>
                 <a href="#"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Free
-                    trial for 30 days</a>
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Commencer</a>
             </div>
         </div>
     </section>
