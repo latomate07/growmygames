@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announce;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreAnnounceRequest;
-use App\Http\Requests\UpdateAnnounceRequest;
-use App\Models\Categorie;
+use App\Repositories\AnnounceRepository;
 
 class AnnounceController extends Controller
 {
     protected $announce;
 
-    public function __construct()
+    public function __construct(AnnounceRepository $announce)
     {
-        $this->announce = new Announce();
+        $this->announceRepository = $announce;
     }
+
     public function index()
     {
         return view('Home');
@@ -29,7 +27,7 @@ class AnnounceController extends Controller
      */
     public function list() {
         return view('annonces.List', [
-            'annonces' => $this->announce->list() 
+            'annonces' => $this->announceRepository->list() 
         ]);
     }
 
@@ -40,7 +38,7 @@ class AnnounceController extends Controller
     public function show(Request $resquest, $id)
     {
         return view("annonces.Announce", [
-            "annonce" => $this->announce->show($id)
+            "annonce" => $this->announceRepository->show($id)
         ]);
     }
 
@@ -50,19 +48,7 @@ class AnnounceController extends Controller
      */
     public function create(StoreAnnounceRequest $request)
     {
-        $imgFolder = $request->image->store('announces');
-
-        $annonce = Announce::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'type' => $request->type,
-            'image' => $imgFolder
-        ]);
-
-        Categorie::create([
-             'nom' => $request->categorie,
-             'announce_id' => $annonce->id
-        ]);
+        $this->announceRepository->createAnnounce($request);
 
         return redirect('/annonces')->with('status', 'Votre annonce a été crée avec succès.');
     }
