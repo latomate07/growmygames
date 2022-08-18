@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,8 +37,9 @@ Route::get("/announce/{id}", [AnnounceController::class, 'show'])->name('announc
 Route::get("/mon-compte", [UserController::class, 'index'])->name('userProfil');
 
 
-Route::resource("user", UserController::class);
-
+// Route::resource("user", UserController::class);
+Route::post("/user/create", [UserController::class, 'store'])
+      ->name('user.create');
 
 
 
