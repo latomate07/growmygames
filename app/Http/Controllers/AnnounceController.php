@@ -9,7 +9,7 @@ use App\Repositories\AnnounceRepository;
 
 class AnnounceController extends Controller
 {
-    protected $announce;
+    protected $announceRepository;
 
     public function __construct(AnnounceRepository $announce)
     {
