@@ -7,7 +7,7 @@
     <div class="list">
         @if(count($annonces) !== 0)
             @foreach ($annonces as $item)
-            <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white mb-6 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <a href="{{ route("announce.show", $item->id) }}">
                     <img class="rounded-t-lg" src="{{ asset('storage/' . $item->image)}}" alt="" />
                 </a>

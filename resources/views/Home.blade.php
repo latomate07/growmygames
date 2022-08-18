@@ -10,7 +10,7 @@
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                     GrowMyGames - plateforme moderne combinant les intérêts des annonceurs et des webmaster
                 </p>
-                <a href="#"
+                <a href="{{ route('signin') }}"
                     class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                     Commencer
                     <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
@@ -20,7 +20,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </a>
-                <a href="#"
+                <a href="#enSavoirPlus"
                     class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                     En savoir plus
                 </a>
@@ -31,7 +31,7 @@
         </div>
     </section>
 
-    <section class="bg-gray-50 dark:bg-gray-800">
+    <section class="bg-gray-50 dark:bg-gray-800" id="enSavoirPlus">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <div class="max-w-screen-md mb-8 lg:mb-16">
                 <h2 class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
@@ -171,7 +171,7 @@
                 <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
                     Essayez notre plateforme gratuitement,
                     Aucune carte de crédit n'est requise.</p>
-                <a href="#"
+                <a href="{{ route('signin') }}"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Commencer</a>
             </div>
