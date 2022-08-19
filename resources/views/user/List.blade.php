@@ -1,11 +1,12 @@
 @extends('layouts.template')
 
 @section('content')
+<h2 class="mx-16 my-12">Nos webmasters</h2>
 
 @if ($list->count())
+<div class="flex justify-around">
     @foreach ($list as $user )
-    <h2 class="mx-16 my-12">Nos webmasters</h2>
-    <div class="mx-16 my-12 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div class="fmx-16 my-12 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div class="flex flex-col items-center pb-10">
             <img src="{{ asset('storage/' . $user->avatar )}}" class="mb-3 w-24 h-24 rounded-full shadow-lg">
             <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{ $user->name }}</h5>
@@ -23,8 +24,9 @@
     </div>
 
     @endforeach
+</div>
 
-    {{ $list->links() }}
+{{ $list->links() }}
 
 @else
    <p class="text-center m-52">Aucun webmasters n'a été trouvé !</p>
