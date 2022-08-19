@@ -39,7 +39,14 @@ class UserController extends Controller {
         // Code
     }
 
-    public function delete(Request $request) {
-        // code
+    /**
+     * destroy()
+     * Supprime la session
+     */
+    public function logout(Request $request) {
+        $user = auth()->user();
+        auth()->logout($user);
+
+        return redirect('/')->with('message', 'Vous avez été déconnecté avec succès !');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnnounceController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
@@ -17,27 +18,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Page d'accueil
 Route::get("/", [AnnounceController::class, 'index'])->name('home');
-Route::get('/annonces', [AnnounceController::class, 'list'])->name('announce.list');
 
-Route::get("/inscription", function () {
-    return view("auth.Signin");
-})->name('signin');
+// Annonces
+Route::get('/announces', [AnnounceController::class, 'list'])->name('announce.list');
 
-Route::get("/connexion", function () {
-    return view("auth.Login");
-})->name('login');
+// Authentification
+Route::get('/inscription', [AuthController::class, 'signin'])->name('signin');
+Route::get('/connexion', [AuthController::class, 'login'])->name('login');
 
-// Route::resource("user", UserController::class);
-Route::post("/user/create", [UserController::class, 'store'])
-    ->name('user.create');
+// User routes
+Route::resource("user", UserController::class)->only([
+    'show', 
+    'store'
+]);
+Route::post('user/logout', [UserController::class, 'logout'])->name('user.logout');
 
+// Route visible au utilisateurs connecté
 Route::middleware('auth')->group(function () {
-    Route::get("/create", function () {
-        return view("annonces.Create");
-    })->name('announce.createForm');
-    Route::post("/announce/create", [AnnounceController::class, 'create'])->name('announce.create');
-    Route::get("/announce/{id}", [AnnounceController::class, 'show'])->name('announce.show');
-    Route::get("/mon-compte", [UserController::class, 'index'])->name('userProfil');
+    Route::resource('announce', AnnounceController::class)->except('list');
 });
 

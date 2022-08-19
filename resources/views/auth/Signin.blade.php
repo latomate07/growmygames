@@ -4,7 +4,7 @@
 
 <div
   class="p-4 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 m-auto my-12">
-  <form class="space-y-6" action="{{ url('user/create') }}" method="post" enctype="multipart/form-data">
+  <form class="space-y-6" action="{{ url('user') }}" method="post" enctype="multipart/form-data">
     @csrf
     <h5 class="text-xl font-medium text-gray-900 dark:text-white">Rejoignez-nous</h5>
     @foreach ($errors->all() as $error )
