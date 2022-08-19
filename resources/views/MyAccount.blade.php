@@ -3,7 +3,7 @@
 @section("content")
 
 
-<p>{{  $result  }}</p>
+<p>MyAccount</p>
 
 
 

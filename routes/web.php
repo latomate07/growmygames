@@ -33,7 +33,9 @@ Route::resource("user", UserController::class)->only([
     'show', 
     'store'
 ]);
+
 Route::post('user/logout', [UserController::class, 'logout'])->name('user.logout');
+Route::post('user/login', [UserController::class, 'login'])->name('user.login');
 
 // Route visible au utilisateurs connecté
 Route::middleware('auth')->group(function () {

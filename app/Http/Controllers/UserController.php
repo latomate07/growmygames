@@ -1,6 +1,7 @@
 <?php 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
@@ -34,13 +35,16 @@ class UserController extends Controller {
     public function store(StoreUserRequest $request) {
         return $this->userRepository->createUser($request);
     }
+    public function login(LoginUserRequest $request){
+        return $this->userRepository->loginUser($request);
+    }
 
     public function edit(Request $request, User $id) {
         // Code
     }
-
+   
     /**
-     * destroy()
+     * logout()
      * Supprime la session
      */
     public function logout(Request $request) {

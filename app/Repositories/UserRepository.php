@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserRepository 
 {
@@ -13,7 +14,7 @@ class UserRepository
     public function showUser($id) {
         $user = User::findOrfail($id);
         if(! is_null($user)) {
-            return view('profil', $user);
+            return view('MyAccount', $user);
         } else {
             return redirect('/')->withErrors("Cet utilisateur n'existe pas");
         }
@@ -25,7 +26,7 @@ class UserRepository
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'role' => $request->role,
             'avatar' => $avatar
         ]);
@@ -39,6 +40,16 @@ class UserRepository
         $user = User::findOrfail($id);
 
         // return
+    }
+
+    public function loginUser($request) {
+        $credentials = $request->only('email', 'password');
+
+        if(Auth()->attempt($credentials)) {
+            return redirect('/')->withSuccess('Bon retour parmi nous !');
+        }
+
+        return redirect('/connexion')->withErrors('Votre identifiant ou mot de passe est incorrect.');
     }
 
 }
