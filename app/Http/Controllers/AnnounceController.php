@@ -49,7 +49,10 @@ class AnnounceController extends Controller
     public function create(StoreAnnounceRequest $request)
     {
         $this->announceRepository->createAnnounce($request);
+        return redirect('/announces')->with('status', 'Votre annonce a été crée avec succès.');
+    }
 
-        return redirect('/annonces')->with('status', 'Votre annonce a été crée avec succès.');
+    public function createForm() {
+        return view('annonces.Create');
     }
 }

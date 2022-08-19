@@ -25,7 +25,9 @@ class UserController extends Controller {
      * Récupère tout les utilisateurs et les renvoie 
      */
     public function showAll() {
-        return view(['users' => $this->userRepository->showAll()]);
+        return view('user.List', [
+            'list' => $this->userRepository->showAll()
+        ]);
     }
 
     public function show(User $id) {

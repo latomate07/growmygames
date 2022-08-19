@@ -7,19 +7,35 @@ use Illuminate\Support\Facades\Hash;
 
 class UserRepository 
 {
+    /**
+     * Function showAll()
+     * Récupère et renvoi tout les derniers utilisateurs
+     * Ayant le role => Webmaster
+     */
     public function showAll() {
-        return User::latest()->paginate(5);
+        $users = User::latest()->where('role', 'Webmaster')->paginate(5);
+        return $users;
     }
 
+    /**
+     * Function showUser()
+     * Récupère et renvoie les informations d'un utilisateur
+     * Condition => Recevoir son ID
+     */
     public function showUser($id) {
         $user = User::findOrfail($id);
         if(! is_null($user)) {
-            return view('MyAccount', $user);
+            return view('user/Account', $user);
         } else {
             return redirect('/')->withErrors("Cet utilisateur n'existe pas");
         }
     }
 
+    /**
+     * Function createUser
+     * Créer un nouveau utilisateur
+     * Condition => Recevoir son nom, email, password, role & son avatar
+     */
     public function createUser($request) {
         $avatar = $request->avatar->store("users");
 
@@ -42,6 +58,11 @@ class UserRepository
         // return
     }
 
+    /**
+     * Function loginUser
+     * Connecte un utilisateur
+     * Condition => Recevoir son email et son mot de passe
+     */
     public function loginUser($request) {
         $credentials = $request->only('email', 'password');
 

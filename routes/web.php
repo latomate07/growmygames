@@ -33,12 +33,14 @@ Route::resource("user", UserController::class)->only([
     'show', 
     'store'
 ]);
-
+Route::get("/webmasters", [UserController::class, 'showAll'])->name('users.show');
 Route::post('user/logout', [UserController::class, 'logout'])->name('user.logout');
 Route::post('user/login', [UserController::class, 'login'])->name('user.login');
 
 // Route visible au utilisateurs connecté
 Route::middleware('auth')->group(function () {
-    Route::resource('announce', AnnounceController::class)->except('list');
+    Route::resource('announce', AnnounceController::class)->except('list', 'create');
+    Route::get('create', [AnnounceController::class, 'createForm'])->name('createForm');
+    Route::post('announce/create', [AnnounceController::class, 'create'])->name('announce.create');
 });
 
