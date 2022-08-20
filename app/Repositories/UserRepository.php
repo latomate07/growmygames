@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use App\Notifications\UserRegisterNotification;
 use Illuminate\Support\Facades\Hash;
 
 class UserRepository 
@@ -48,6 +49,9 @@ class UserRepository
         ]);
 
         auth()->login($user); // Connectez l'utilisateur
+
+        // Notifier l'utilisateur
+        $user->notify(new UserRegisterNotification());
         
         return redirect('/')->with('success', 'Votre compte a été crée avec succès.');
     }
