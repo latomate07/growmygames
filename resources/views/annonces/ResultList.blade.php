@@ -18,7 +18,7 @@
     </div>
 </form>
 
-<div class="mx-12 my-6">
+<div class="mx-12 my-6 flex justify-between">
     @if(count($filterAnnounce) !== 0)
         @foreach ($filterAnnounce as $item)
         <div class="max-w-sm bg-white mb-6 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
