@@ -55,4 +55,17 @@ class AnnounceController extends Controller
     public function createForm() {
         return view('annonces.Create');
     }
+
+    /**
+     * Function search()
+     * Recherche d'annonce
+     * Condition => Recevoir la valeur de l'annonce recherchée
+     */
+    public function search(Request $request) {
+        $key = $request->input('query');
+
+        return view('annonces.ResultList', [
+            "filterAnnounce" => $this->announceRepository->searchAnnounce($key)
+        ]);
+    }
 }

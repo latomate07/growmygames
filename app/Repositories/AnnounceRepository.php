@@ -41,4 +41,16 @@ class AnnounceRepository
             'announce_id' => $annonce->id
        ]);
     }
+
+    /**
+     * searchAnnounce
+     * Rechercher une annonce
+     */
+    public function searchAnnounce($key) {
+        $query = Announce::with('categorie')
+                        ->where('title', 'like', "%$key%")
+                        ->orWhere('description', 'like', "%$key%")
+                        ->paginate(5);
+        return $query;
+    }
 }

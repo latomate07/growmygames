@@ -37,6 +37,9 @@ Route::get("/webmasters", [UserController::class, 'showAll'])->name('users.show'
 Route::post('user/logout', [UserController::class, 'logout'])->name('user.logout');
 Route::post('user/login', [UserController::class, 'login'])->name('user.login');
 
+// Route Search Get
+Route::get("announces/search", [AnnounceController::class, 'search'])->name('announce.search');
+
 // Route visible au utilisateurs connecté
 Route::middleware('auth')->group(function () {
     Route::resource('announce', AnnounceController::class)->except('list', 'create');
