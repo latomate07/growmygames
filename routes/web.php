@@ -47,3 +47,8 @@ Route::middleware('auth')->group(function () {
     Route::post('announce/create', [AnnounceController::class, 'create'])->name('announce.create');
 });
 
+/**
+ * Route views
+ * Only view routes
+ */
+Route::view('/contact', 'Contact')->name('contact');
