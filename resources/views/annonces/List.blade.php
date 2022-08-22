@@ -2,7 +2,7 @@
 
 @section("content") 
     <p>{{ session('status') }}</p>
-    <h2 class="mx-12 my-12 mb-2">Nos annonces ({{ $annonces->total() }})</h2>
+    <h2 class="mx-12 my-12 mb-2">Toutes les offres ({{ $annonces->total() }})</h2>
 
 
     <form method="GET" action="{{ route('announce.search') }}">   
