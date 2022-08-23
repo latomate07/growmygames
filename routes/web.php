@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnnounceController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,9 @@ Route::post('user/login', [UserController::class, 'login'])->name('user.login');
 // Route Search Get
 Route::get("announces/search", [AnnounceController::class, 'search'])->name('announce.search');
 
+// Contact routes
+Route::post('/contact/send', [ContactUsController::class, 'sendMessage'])->name('contact.send');
+
 // Route visible au utilisateurs connecté
 Route::middleware('auth')->group(function () {
     Route::resource('announce', AnnounceController::class)->except('list', 'create');
@@ -52,3 +56,4 @@ Route::middleware('auth')->group(function () {
  * Only view routes
  */
 Route::view('/contact', 'Contact')->name('contact');
+
