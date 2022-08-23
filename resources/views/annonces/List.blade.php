@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section("content") 
-    <p>{{ session('status') }}</p>
+    <p class="mx-12 my-12 mb-2">{{ session('status') }}</p>
     <h2 class="mx-12 my-12 mb-2">Toutes les offres ({{ $annonces->total() }})</h2>
 
 

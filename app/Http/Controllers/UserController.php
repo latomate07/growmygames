@@ -53,6 +53,6 @@ class UserController extends Controller {
         $user = auth()->user();
         auth()->logout($user);
 
-        return redirect('/')->with('message', 'Vous avez été déconnecté avec succès !');
+        return back()->with('message', 'Vous avez été déconnecté avec succès !');
     }
 }
