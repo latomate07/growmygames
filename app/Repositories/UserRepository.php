@@ -3,8 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\User;
-use App\Notifications\UserRegisterNotification;
+use App\Jobs\WelcomeUserMailJob;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\UserRegisterNotification;
 
 class UserRepository 
 {
@@ -51,7 +52,7 @@ class UserRepository
         auth()->login($user); // Connectez l'utilisateur
 
         // Notifier l'utilisateur
-        $user->notify(new UserRegisterNotification());
+        WelcomeUserMailJob::dispatch($user);
         
         return redirect('/')->with('success', 'Votre compte a été crée avec succès.');
     }
